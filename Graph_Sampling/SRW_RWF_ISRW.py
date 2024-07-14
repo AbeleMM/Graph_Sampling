@@ -86,7 +86,7 @@ class SRW_RWF_ISRW:
         return sampled_graph
 
     def random_walk_induced_graph_sampling(self, complete_graph, nodes_to_sample):
-        complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', True)
+        complete_graph = nx.convert_node_labels_to_integers(complete_graph, 0, 'default', label_attribute='orig_id')
         # giving unique id to every node same as built-in function id
         for n, data in complete_graph.nodes(data=True):
             complete_graph.nodes[n]['id'] = n
